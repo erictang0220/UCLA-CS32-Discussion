@@ -69,7 +69,7 @@ Given an array of integers `nums` sorted in **ascending** order, find the positi
 3    int hi = size-1; // pay attention to the -1
 4  
 5    while (lo <= hi) { // pay attention to <= or <
-6      int mid = (lo + hi) / 2; // pay attention whether +1
+6      int mid = (lo + hi) / 2; // pay attention to whether +1 (biased to the floor side or the ceiling side)
 7  
 8      if (nums[mid] == target) { 
 9        return mid;
@@ -96,8 +96,8 @@ Lesson learned:
   - `lo = mid` vs `lo = mid + 1`
   - Whether to change `lo` or `hi` (e.g., when `nums[mid] < target`)
   - double-check whether you can directly return `-1` outside the loop.
-  - `mid = (lo + hi) / 2` vs `mid = (lo + hi) / 2`
-  - Diversity your test cases.
+  - `mid = (lo + hi) / 2` vs `mid = (lo + hi) / 2 + 1`
+  - Diversify your test cases.
 
 - Follow-up questions:
   - What if we write `lo = mid;` instead?
